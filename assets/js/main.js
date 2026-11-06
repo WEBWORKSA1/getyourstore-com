@@ -116,7 +116,13 @@
 
   /* news feed (updated daily by GitHub Actions) */
   var nl=$$('[data-news]');
-  if(nl.length){fetch('/data/news.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(j){
+  var FEEDS=['https://news.google.com/rss/search?q=ecommerce+small+business&hl=en-US&gl=US&ceid=US:en','https://news.google.com/rss/search?q=%22online+store%22+OR+%22online+retail%22&hl=en-US&gl=US&ceid=US:en'];
+  function live(){return Promise.all(FEEDS.map(function(u){return fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(u)).then(function(r){return r.json()}).catch(function(){return {items:[]}})}))
+    .then(function(rs){var seen={},out=[];rs.forEach(function(r){(r.items||[]).forEach(function(it){var t=String(it.title||''),src='';var p=t.lastIndexOf(' - ');if(p>0){src=t.slice(p+3);t=t.slice(0,p)}
+      var k=t.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,80);if(!t||seen[k]||!/^https?:/.test(it.link||''))return;seen[k]=1;out.push({title:t,link:it.link,source:src||it.author||'',date:(it.pubDate||'').replace(' ','T')+'Z'})})});
+      out.sort(function(a,b){return new Date(b.date)-new Date(a.date)});return {updated:new Date().toISOString(),items:out.slice(0,30)}})}
+  if(nl.length){fetch('/data/news.json',{cache:'no-cache'}).then(function(r){return r.json()}).catch(function(){return {items:[]}}).then(function(j){
+      var stale=!j.updated||(Date.now()-new Date(j.updated))>2*864e5;return (stale||!(j.items||[]).length)?live().then(function(l){return l.items.length?l:j}):j}).then(function(j){
       var items=(j.items||[]);nl.forEach(function(box){var lim=+box.getAttribute('data-news')||30;
         if(!items.length){box.innerHTML='<p class="muted">Fresh headlines load here daily. Check back soon.</p>';return}
         box.innerHTML=items.slice(0,lim).map(function(it){var d=it.date?new Date(it.date):null;
