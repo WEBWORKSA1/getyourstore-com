@@ -1,0 +1,47 @@
+---
+layout: default
+title: "Online Store Video Tutorials — Shopify, Wix, WooCommerce & More | GetYourStore.com"
+description: "Hand-picked YouTube tutorials for setting up an online store on Shopify, Wix and WooCommerce, plus product photography, shipping and ecommerce SEO."
+---
+<section class="page-hero"><div class="wrap">
+  <nav class="crumbs"><a href="/">Home</a> / <span>Videos</span></nav>
+  <span class="eyebrow">Video library</span>
+  <h1>Learn by watching</h1>
+  <p class="lead">Store-setup walk-throughs and skill videos from established YouTube creators and official channels. Videos load only when you press play, using YouTube's privacy-enhanced mode.</p>
+</div></section>
+<section><div class="wrap">
+  <div class="filters" role="group" aria-label="Filter videos">
+    <button class="fbtn" data-v="all" aria-pressed="true">All</button>
+    <button class="fbtn" data-v="setup" aria-pressed="false">Store setup</button>
+    <button class="fbtn" data-v="skills" aria-pressed="false">Skills &amp; growth</button>
+  </div>
+  <div class="video-grid" id="vgrid">
+    <div class="vcard" data-c="setup"><button class="yt" data-id="u-Qfdn44rB4" aria-label="Play: The Official Shopify Tutorial: Set Up Your Store the Right Way"></button><h3>The Official Shopify Tutorial: Set Up Your Store the Right Way</h3><p>Learn With Shopify · Shopify setup</p></div>
+    <div class="vcard" data-c="setup"><button class="yt" data-id="gr5LNqIiQIg" aria-label="Play: Start Your First Online Store Without Any Experience"></button><h3>Start Your First Online Store Without ANY Experience: Full Shopify Tutorial</h3><p>Think Tutorial · Beginner walk-through</p></div>
+    <div class="vcard" data-c="setup"><button class="yt" data-id="uzaKLZxBpKU" aria-label="Play: Shopify Tutorial for Beginners, complete store setup"></button><h3>Shopify Tutorial for Beginners: Complete Store Setup (A–Z Guide)</h3><p>Casual Ecommerce · In-depth setup</p></div>
+    <div class="vcard" data-c="setup"><button class="yt" data-id="xIc5kQkExX0" aria-label="Play: How to Launch an Online Store with Shopify"></button><h3>How to Launch an Online Store with Shopify (Beginner Tutorial)</h3><p>My First Website · Quick launch</p></div>
+    <div class="vcard" data-c="setup"><button class="yt" data-id="nhQIP7twFPw" aria-label="Play: Wix Online Store Setup"></button><h3>Wix Online Store Setup: Step-by-Step Beginner Tutorial</h3><p>My First Website · Wix eCommerce</p></div>
+    <div class="vcard" data-c="setup"><button class="yt" data-id="pFc8B61Jeys" aria-label="Play: Complete WooCommerce Tutorial for Beginners"></button><h3>Complete WooCommerce Tutorial for Beginners (Elementor)</h3><p>SiteKrafter · WordPress + WooCommerce</p></div>
+    <div class="vcard" data-c="skills"><button class="yt" data-id="uZeRLXODK5w" aria-label="Play: Product Photography on a Budget using only your phone"></button><h3>Product Photography on a Budget: Gorgeous Photos Using Only Your Phone</h3><p>Learn With Shopify · Photography</p></div>
+    <div class="vcard" data-c="skills"><button class="yt" data-id="GTk-u5KSJrk" aria-label="Play: How to set up shipping rates in your store"></button><h3>Shipping Settings: How to Set Up Shipping Rates in Your Store</h3><p>Casual Ecommerce · Shipping</p></div>
+    <div class="vcard" data-c="skills"><button class="yt" data-id="BX-Y8mTIt3w" aria-label="Play: SEO Optimization for Beginners"></button><h3>Store SEO Optimization for Beginners: Complete Step-by-Step Tutorial</h3><p>Casual Ecommerce · SEO</p></div>
+  </div>
+  <div class="card" style="margin-top:36px">
+    <h3>Find more on YouTube</h3>
+    <div class="rm-links">
+      <a class="pill" href="https://www.youtube.com/results?search_query=how+to+start+an+online+store" target="_blank" rel="noopener">How to start an online store</a>
+      <a class="pill" href="https://www.youtube.com/results?search_query=squarespace+online+store+tutorial" target="_blank" rel="noopener">Squarespace store tutorial</a>
+      <a class="pill" href="https://www.youtube.com/results?search_query=bigcommerce+tutorial+for+beginners" target="_blank" rel="noopener">BigCommerce tutorial</a>
+      <a class="pill" href="https://www.youtube.com/results?search_query=print+on+demand+store+tutorial" target="_blank" rel="noopener">Print-on-demand setup</a>
+      <a class="pill" href="https://www.youtube.com/results?search_query=sell+digital+products+online+tutorial" target="_blank" rel="noopener">Selling digital products</a>
+      <a class="pill" href="https://www.youtube.com/results?search_query=ecommerce+email+marketing+tutorial" target="_blank" rel="noopener">Email marketing for stores</a>
+      <a class="pill" href="https://www.youtube.com/results?search_query=google+merchant+center+setup" target="_blank" rel="noopener">Google Merchant Center</a>
+    </div>
+  </div>
+  <p class="small muted" style="margin-top:16px">Videos are embedded from YouTube and belong to their creators. GetYourStore.com is not affiliated with these channels. Got a great tutorial to suggest? <a href="/contact.html">Tell us</a>.</p>
+</div></section>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var cards=[].slice.call(document.querySelectorAll('#vgrid .vcard'));
+  [].forEach.call(document.querySelectorAll('[data-v]'),function(b){b.addEventListener('click',function(){[].forEach.call(document.querySelectorAll('[data-v]'),function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+    cards.forEach(function(c){c.hidden=!(b.dataset.v==='all'||c.dataset.c===b.dataset.v)})})})});
+</script>
