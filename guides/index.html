@@ -1,0 +1,29 @@
+---
+layout: default
+title: "Online Store Guides — Start, Build & Grow | GetYourStore.com"
+description: "Free, in-depth guides to starting and growing an online store: platforms, business models, naming, photography, product pages, pricing, payments, SEO, marketing and legal basics."
+---
+<section class="page-hero"><div class="wrap">
+  <nav class="crumbs"><a href="/">Home</a> / <span>Guides</span></nav>
+  <span class="eyebrow">Free · reviewed regularly</span>
+  <h1>Guides for every stage of your store</h1>
+  <p class="lead">Practical, plain-English guides written to help you make decisions, not to sell you a course. Start at the top if you're new.</p>
+  <div class="filters" role="group" aria-label="Filter guides" style="margin-top:20px" id="gfilters">
+    <button class="fbtn" data-g="all" aria-pressed="true">All</button>
+    {% assign cats = site.pages | where_exp: "p", "p.layout == 'guide'" | map: "category" | uniq %}
+    {% for c in cats %}<button class="fbtn" data-g="{{ c }}" aria-pressed="false">{{ c }}</button>{% endfor %}
+  </div>
+</div></section>
+<section><div class="wrap">
+  <div class="grid g3" id="glist">
+    {% assign guides = site.pages | where_exp: "p", "p.layout == 'guide'" | sort: "order" %}
+    {% for g in guides %}
+    <a class="card link-card" data-g="{{ g.category }}" href="{{ g.url }}"><span class="tag">{{ g.category }}</span><h3>{{ g.short | default: g.title }}</h3><p>{{ g.description }}</p><span class="more">Read guide →</span></a>
+    {% endfor %}
+  </div>
+</div></section>
+<script>
+document.addEventListener('DOMContentLoaded',function(){var cards=[].slice.call(document.querySelectorAll('#glist .card'));
+  [].forEach.call(document.querySelectorAll('#gfilters .fbtn'),function(b){b.addEventListener('click',function(){[].forEach.call(document.querySelectorAll('#gfilters .fbtn'),function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+    cards.forEach(function(c){c.hidden=!(b.dataset.g==='all'||c.dataset.g===b.dataset.g)})})})});
+</script>
