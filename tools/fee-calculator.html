@@ -1,0 +1,37 @@
+---
+layout: default
+title: "Ecommerce Platform Fee Calculator — Compare Effective Fee Rates | GetYourStore.com"
+description: "Compare up to three ecommerce plans by total monthly fees and effective fee rate at your order volume, including plan price, payment processing and transaction fees."
+tools: true
+---
+<section class="page-hero"><div class="wrap">
+  <nav class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / <span>Platform Fee Calculator</span></nav>
+  <span class="eyebrow">Free calculator</span>
+  <h1>Platform fee calculator</h1>
+  <p class="lead">A cheap plan with high transaction fees can cost more than a pricier plan once you're selling. Enter each plan's current rates from the provider's pricing page and see your real cost.</p>
+</div></section>
+<section><div class="wrap tool">
+  <form class="form-card" id="fc-form" onsubmit="return false">
+    <div class="row"><div class="field"><label for="fc-orders">Orders per month</label><input id="fc-orders" type="number" min="0" value="150"></div>
+    <div class="field"><label for="fc-aov">Average order value ($)</label><input id="fc-aov" type="number" min="0" step="0.01" value="55"></div></div>
+    <div class="fc-grid">
+      <div class="card" style="padding:16px"><div class="field"><label for="fc-a-name">Plan A name</label><input id="fc-a-name" value="Basic plan"></div><div class="field"><label for="fc-a-plan">Monthly price ($)</label><input id="fc-a-plan" type="number" step="0.01" value="29"></div><div class="field"><label for="fc-a-pp">Payment %</label><input id="fc-a-pp" type="number" step="0.01" value="2.9"></div><div class="field"><label for="fc-a-pf">Payment fixed ($)</label><input id="fc-a-pf" type="number" step="0.01" value="0.30"></div><div class="field" style="margin:0"><label for="fc-a-tx">Extra transaction %</label><input id="fc-a-tx" type="number" step="0.01" value="0"></div></div>
+      <div class="card" style="padding:16px"><div class="field"><label for="fc-b-name">Plan B name</label><input id="fc-b-name" value="Growth plan"></div><div class="field"><label for="fc-b-plan">Monthly price ($)</label><input id="fc-b-plan" type="number" step="0.01" value="79"></div><div class="field"><label for="fc-b-pp">Payment %</label><input id="fc-b-pp" type="number" step="0.01" value="2.6"></div><div class="field"><label for="fc-b-pf">Payment fixed ($)</label><input id="fc-b-pf" type="number" step="0.01" value="0.30"></div><div class="field" style="margin:0"><label for="fc-b-tx">Extra transaction %</label><input id="fc-b-tx" type="number" step="0.01" value="0"></div></div>
+      <div class="card" style="padding:16px"><div class="field"><label for="fc-c-name">Plan C name</label><input id="fc-c-name" value="Free plan + fees"></div><div class="field"><label for="fc-c-plan">Monthly price ($)</label><input id="fc-c-plan" type="number" step="0.01" value="0"></div><div class="field"><label for="fc-c-pp">Payment %</label><input id="fc-c-pp" type="number" step="0.01" value="2.9"></div><div class="field"><label for="fc-c-pf">Payment fixed ($)</label><input id="fc-c-pf" type="number" step="0.01" value="0.30"></div><div class="field" style="margin:0"><label for="fc-c-tx">Extra transaction %</label><input id="fc-c-tx" type="number" step="0.01" value="5"></div></div>
+    </div>
+    <p class="small muted" style="margin-top:12px">Default values are illustrative examples, not any provider's actual pricing. Fees change often, so always copy current rates from the official pricing page.</p>
+  </form>
+  <div class="result-card" aria-live="polite">
+    <h3>Monthly fees at <span id="fc-rev">—</span> revenue</h3>
+    <div class="kpis" id="fc-out" style="grid-template-columns:1fr"></div>
+    <p>Choosing the cheapest plan saves up to <strong id="fc-save" style="color:#fff">—</strong> a year versus the most expensive at this volume.</p>
+    <a class="btn btn-accent btn-sm" href="/compare.html">Compare platforms</a>
+  </div>
+</div></section>
+<section class="alt"><div class="wrap narrow prose">
+  <h2>How to read your effective fee rate</h2>
+  <p><strong>Effective fee rate</strong> = (plan price + payment fees + transaction fees) ÷ revenue. It's the single number that makes plans comparable. At low volume, the monthly price dominates, so free or cheap plans win. As volume grows, percentage fees dominate, and plans with lower processing rates pull ahead.</p>
+  <h3>Hidden costs to add</h3>
+  <ul><li>Paid apps and plugins (often charged monthly)</li><li>Currency conversion and cross-border card fees</li><li>Chargeback fees</li><li>Premium theme licences and renewals</li><li>Hosting, security and backups for self-hosted stores</li></ul>
+  <p>Next: plug your margin into the <a href="/tools/profit-margin-calculator.html">profit margin calculator</a>.</p>
+</div></section>

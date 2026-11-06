@@ -1,0 +1,43 @@
+---
+layout: default
+title: "Break-even & ROAS Calculator for Online Stores | GetYourStore.com"
+description: "Find how many orders you need to break even, your break-even ROAS for ads and the maximum cost per acquisition you can afford. Free ecommerce calculator."
+tools: true
+---
+<section class="page-hero"><div class="wrap">
+  <nav class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / <span>Break-even &amp; ROAS</span></nav>
+  <span class="eyebrow">Free calculator</span>
+  <h1>Break-even &amp; ROAS calculator</h1>
+  <p class="lead">Know your numbers before you turn on ads: how many orders cover your costs, and the return on ad spend you need just to stay level.</p>
+</div></section>
+<section><div class="wrap tool">
+  <form class="form-card" id="be-form" onsubmit="return false">
+    <div class="field"><label for="be-fixed">Fixed monthly costs ($): platform, apps, tools, salaries</label><input id="be-fixed" type="number" min="0" value="600"></div>
+    <div class="row"><div class="field"><label for="be-price">Average order value ($)</label><input id="be-price" type="number" min="0" step="0.01" value="48"></div>
+    <div class="field"><label for="be-var">Variable cost per order ($): product, shipping, fees</label><input id="be-var" type="number" min="0" step="0.01" value="22"></div></div>
+    <div class="field"><label for="be-goal">Monthly profit goal ($)</label><input id="be-goal" type="number" min="0" value="2000"></div>
+  </form>
+  <div class="result-card" aria-live="polite">
+    <h3>Your numbers</h3>
+    <div class="kpis">
+      <div class="kpi"><small>Contribution / order</small><strong id="be-cm">—</strong></div>
+      <div class="kpi"><small>Contribution margin</small><strong id="be-cmr">—</strong></div>
+      <div class="kpi"><small>Break-even orders</small><strong id="be-units">—</strong></div>
+      <div class="kpi"><small>Break-even revenue</small><strong id="be-rev">—</strong></div>
+      <div class="kpi"><small>Break-even ROAS</small><strong id="be-roas">—</strong></div>
+      <div class="kpi"><small>Max CPA (break-even)</small><strong id="be-cpa">—</strong></div>
+    </div>
+    <p>To hit your profit goal you need <strong id="be-goalu" style="color:#fff">—</strong>. At break-even that's about <strong id="be-day" style="color:#fff">—</strong>.</p>
+    <a class="btn btn-accent btn-sm" href="/get-your-store-built.html">Plan a profitable launch with us</a>
+  </div>
+</div></section>
+<section class="alt"><div class="wrap narrow prose">
+  <h2>The formulas</h2>
+  <ul>
+    <li><strong>Contribution per order</strong> = average order value − variable cost per order</li>
+    <li><strong>Break-even orders</strong> = fixed costs ÷ contribution per order</li>
+    <li><strong>Break-even ROAS</strong> = 1 ÷ contribution margin. Below this, every ad-driven sale loses money.</li>
+    <li><strong>Max CPA</strong> = contribution per order: the most you can spend to win one order and still break even on it.</li>
+  </ul>
+  <p>Repeat purchases change the picture. If customers buy three times a year, you can afford a higher first-order CPA, as long as you have the cash flow. Use the <a href="/tools/profit-margin-calculator.html">profit margin calculator</a> to work out your variable cost per order.</p>
+</div></section>
