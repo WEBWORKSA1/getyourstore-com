@@ -21,6 +21,7 @@ exclude:
   - BUILD-PROMPTS.md
   - RESEARCH.md
   - scripts
+  - automation
   - LICENSE
   - Gemfile
   - Gemfile.lock
