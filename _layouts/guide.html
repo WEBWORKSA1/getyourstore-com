@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="guide">
+  <header class="page-hero guide-hero">
+    <div class="wrap narrow">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / <span>{{ page.short | default: page.title }}</span></nav>
+      <span class="eyebrow">{{ page.category | default: "Guide" }}</span>
+      <h1>{{ page.h1 | default: page.title }}</h1>
+      <p class="lead">{{ page.description }}</p>
+      <p class="meta">By the GetYourStore.com editorial team · Last reviewed <time datetime="{{ page.reviewed | default: '2026-11-06' }}">{{ page.reviewed | default: '2026-11-06' | date: "%B %-d, %Y" }}</time> · <span class="js-readtime">8</span> min read</p>
+    </div>
+  </header>
+  <div class="wrap guide-grid">
+    <aside class="toc" aria-label="On this page"><strong>On this page</strong><ol id="toc"></ol>
+      <div class="toc-cta"><p>Rather skip the work?</p><a class="btn btn-primary btn-sm" href="/get-your-store-built.html">Get it built for you</a></div>
+    </aside>
+    <div class="prose" id="prose">
+      {{ content }}
+      {% if page.tools_related %}
+      <div class="callout">
+        <strong>Try the free tools mentioned in this guide</strong>
+        <ul>{% for t in page.tools_related %}<li><a href="/tools/{{ t[1] }}">{{ t[0] }}</a></li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      <div class="guide-cta">
+        <div><h2>Want this done for you?</h2><p>Tell us what you sell. We'll send a free plan and a fixed quote to build and launch your store, usually within 48 hours.</p></div>
+        <a class="btn btn-accent" href="/get-your-store-built.html">Start my free brief</a>
+      </div>
+      <p class="small muted">This guide is general information, not legal, tax or financial advice. Platform features and pricing change, so check the provider's official pages before deciding. See our <a href="/disclaimer.html">Disclaimer</a> and <a href="/about.html#editorial">editorial policy</a>.</p>
+    </div>
+  </div>
+  <section class="wrap related">
+    <h2>Keep going</h2>
+    <div class="grid g3">
+      {% assign guides = site.pages | where_exp: "p", "p.layout == 'guide'" | where_exp: "p", "p.url != page.url" | sample: 3 %}
+      {% for g in guides %}
+      <a class="card link-card" href="{{ g.url }}"><span class="tag">{{ g.category }}</span><h3>{{ g.short | default: g.title }}</h3><p>{{ g.description | truncate: 110 }}</p></a>
+      {% endfor %}
+    </div>
+  </section>
+</article>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":{{ page.h1 | default: page.title | jsonify }},"description":{{ page.description | jsonify }},"dateModified":"{{ page.reviewed | default: '2026-11-06' }}","datePublished":"2026-11-06","author":{"@type":"Organization","name":"GetYourStore.com editorial team"},"publisher":{"@type":"Organization","name":"GetYourStore.com"},"mainEntityOfPage":"{{ page.url | absolute_url }}"}
+</script>

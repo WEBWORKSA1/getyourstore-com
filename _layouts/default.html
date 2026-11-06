@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% assign page_title = page.title | default: site.title %}
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<meta name="robots" content="{% if page.noindex %}noindex,follow{% else %}index,follow,max-image-preview:large{% endif %}">
+<meta name="theme-color" content="#0f7b5f">
+<meta property="og:type" content="{% if page.layout == 'guide' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title }}">
+<meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 200 }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/img/og.svg' | absolute_url }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<script>try{var t=localStorage.getItem('gys-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"{{ site.url }}/#org","name":"GetYourStore.com","url":"{{ site.url }}/","logo":"{{ site.url }}/assets/img/favicon.svg"},
+ {"@type":"WebSite","@id":"{{ site.url }}/#site","url":"{{ site.url }}/","name":"GetYourStore.com","publisher":{"@id":"{{ site.url }}/#org"}}
+]}
+</script>
+{% if page.schema %}<script type="application/ld+json">{{ page.schema }}</script>{% endif %}
+</head>
+<body class="{{ page.body_class }}">
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="topstrip">
+  <a href="https://web.works/contact" target="_blank" rel="noopener">Contact, if you are interested in this website/domain name/Sponsorship/Advertisement/Partnership <span aria-hidden="true">→</span></a>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap nav-wrap">
+    <a class="logo" href="/" aria-label="GetYourStore.com home">
+      <svg viewBox="0 0 40 40" width="34" height="34" aria-hidden="true"><rect x="4" y="12" width="32" height="24" rx="6" fill="var(--brand)"/><path d="M13 14v-3a7 7 0 0 1 14 0v3" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M14 25l5 5 8-10" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>GetYour<b>Store</b><em>.com</em></span>
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Main">
+      <a href="/start.html">Start</a>
+      <a href="/compare.html">Compare</a>
+      <div class="dd">
+        <button class="dd-btn" aria-expanded="false" aria-haspopup="true">Tools <span aria-hidden="true">▾</span></button>
+        <div class="dd-menu">
+          <a href="/tools/platform-quiz.html">Platform Picker Quiz</a>
+          <a href="/tools/store-name-generator.html">Store Name Generator</a>
+          <a href="/tools/profit-margin-calculator.html">Profit Margin Calculator</a>
+          <a href="/tools/startup-cost-calculator.html">Startup Cost Estimator</a>
+          <a href="/tools/fee-calculator.html">Platform Fee Calculator</a>
+          <a href="/tools/break-even-calculator.html">Break-even &amp; ROAS</a>
+          <a href="/tools/product-description-writer.html">Product Description Writer</a>
+          <a href="/tools/launch-checklist.html">Launch Checklist</a>
+          <a class="dd-all" href="/tools/">All tools →</a>
+        </div>
+      </div>
+      <a href="/guides/">Guides</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/news.html">News</a>
+      <a class="nav-more" href="/resources.html">Resources</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="search-open" aria-label="Search the site"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z" fill="currentColor"/></svg></button>
+      <a class="btn btn-primary btn-sm hide-sm" href="/get-your-store-built.html">Get It Built</a>
+      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu" aria-controls="main-nav" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+{{ content }}
+</main>
+
+{% unless page.hide_leadband %}
+<section class="leadband" aria-labelledby="leadband-h">
+  <div class="wrap leadband-in">
+    <div>
+      <span class="eyebrow light">Free · 30-day plan</span>
+      <h2 id="leadband-h">Get a free 30-day store launch plan in your inbox</h2>
+      <p>One email a day with the exact next step, so you go from idea to first sale without guessing. No spam, unsubscribe any time.</p>
+    </div>
+    <form class="js-form leadband-form" data-subject="30-day launch plan signup" data-ok="You're in! Check your inbox for day 1 shortly.">
+      <label class="sr" for="lb-email">Email address</label>
+      <input id="lb-email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+      <input type="hidden" name="source" value="{{ page.url }}">
+      <input class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="check small"><input type="checkbox" name="consent" value="yes" required> <span>I agree to receive emails and accept the <a href="/privacy.html">Privacy Policy</a>.</span></label>
+      <button class="btn btn-accent" type="submit">Send my plan</button>
+      <div class="form-msg" role="status"></div>
+    </form>
+  </div>
+</section>
+{% endunless %}
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="f-brand">
+      <a class="logo" href="/"><svg viewBox="0 0 40 40" width="30" height="30" aria-hidden="true"><rect x="4" y="12" width="32" height="24" rx="6" fill="var(--brand)"/><path d="M13 14v-3a7 7 0 0 1 14 0v3" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M14 25l5 5 8-10" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>GetYour<b>Store</b><em>.com</em></span></a>
+      <p>Free tools, honest comparisons and done-for-you help to launch a profitable online store.</p>
+      <a class="btn btn-primary btn-sm" href="/get-your-store-built.html">Get a free quote</a>
+    </div>
+    <div><h3>Launch</h3><a href="/start.html">10-step roadmap</a><a href="/compare.html">Compare platforms</a><a href="/guides/">Guides</a><a href="/videos.html">Video tutorials</a><a href="/resources.html">Free resources</a><a href="/news.html">Ecommerce news</a></div>
+    <div><h3>Tools</h3><a href="/tools/platform-quiz.html">Platform quiz</a><a href="/tools/store-name-generator.html">Name generator</a><a href="/tools/profit-margin-calculator.html">Profit margin</a><a href="/tools/startup-cost-calculator.html">Startup costs</a><a href="/tools/fee-calculator.html">Fee calculator</a><a href="/tools/launch-checklist.html">Launch checklist</a></div>
+    <div><h3>Community</h3><a href="/get-your-store-built.html">Get your store built</a><a href="/contests.html">Monthly challenge</a><a href="/support.html">Support us</a><a href="/careers.html">Careers &amp; experts</a><a href="/advertise.html">Advertise</a><a href="https://web.works/contact" target="_blank" rel="noopener">Buy / sponsor this site</a></div>
+    <div><h3>Company</h3><a href="/about.html">About &amp; editorial policy</a><a href="/contact.html">Contact</a><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a><a href="/cookies.html">Cookie Policy</a><a href="/disclaimer.html">Disclaimer</a><a href="/trademark.html">Trademark &amp; Copyright</a></div>
+  </div>
+  <div class="wrap f-legal">
+    <p>© <span class="js-year">2026</span> GetYourStore.com. All rights reserved. GetYourStore.com is an independent publication and is not affiliated with, endorsed by or sponsored by any ecommerce platform or any business using a similar name. All third-party trademarks belong to their respective owners and are used for identification and comparison only. <a href="/trademark.html">Trademark &amp; copyright disclosure</a>.</p>
+  </div>
+</footer>
+
+<a class="mobile-cta" href="/get-your-store-built.html">Get a free store quote →</a>
+
+<div class="cookie" id="cookie" hidden>
+  <p>We use cookies for essential features, to remember your settings and to show ads from Google. See our <a href="/cookies.html">Cookie Policy</a>.</p>
+  <div><button class="btn btn-ghost btn-sm" data-cookie="essential">Essential only</button><button class="btn btn-primary btn-sm" data-cookie="all">Accept all</button></div>
+</div>
+
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-box" role="dialog" aria-modal="true" aria-label="Site search">
+    <div class="search-top"><input id="search-input" type="search" placeholder="Search guides, tools, platforms…" aria-label="Search"><button class="icon-btn" id="search-close" aria-label="Close search">✕</button></div>
+    <div id="search-results" class="search-results"><p class="muted">Try "Shopify", "profit", "dropshipping" or "domain".</p></div>
+  </div>
+</div>
+
+<script src="/assets/js/main.js?v=1" defer></script>
+{% if page.tools %}<script src="/assets/js/tools.js?v=1" defer></script>{% endif %}
+</body>
+</html>
