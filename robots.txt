@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /search.json
+
+Sitemap: https://getyourstore.com/sitemap.xml

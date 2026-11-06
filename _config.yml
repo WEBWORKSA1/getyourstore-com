@@ -1,0 +1,26 @@
+title: "GetYourStore.com"
+tagline: "Launch your online store the right way"
+description: "Free tools, honest platform comparisons, step-by-step guides and done-for-you help to plan, build and launch a profitable online store."
+url: "https://getyourstore.com"
+baseurl: ""
+lang: en
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+plugins:
+  - jekyll-sitemap
+defaults:
+  - scope:
+      path: "guides"
+    values:
+      layout: guide
+      sitemap: true
+exclude:
+  - README.md
+  - BUILD-PROMPTS.md
+  - RESEARCH.md
+  - scripts
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock

@@ -1,0 +1,7 @@
+---
+layout: null
+sitemap: false
+---
+[{% assign pgs = site.pages | where_exp: "p", "p.title" %}{% assign first = true %}{% for p in pgs %}{% unless p.noindex or p.url contains '.json' or p.url contains '.xml' or p.url contains '.txt' %}{% unless first %},{% endunless %}{% assign first = false %}
+{"title":{{ p.short | default: p.title | split: ' | ' | first | jsonify }},"url":{{ p.url | jsonify }},"description":{{ p.description | default: '' | jsonify }},"keywords":{{ p.category | default: '' | append: ' ' | append: p.h1 | jsonify }}}{% endunless %}{% endfor %}
+]
