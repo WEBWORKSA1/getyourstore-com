@@ -1,0 +1,52 @@
+---
+layout: default
+title: "Ecommerce Profit Margin Calculator (with Fees, Shipping & Ads) | GetYourStore.com"
+description: "Calculate true profit per order after product cost, shipping, payment fees, platform fees and ad spend. See margin, markup and the price you need for a target margin."
+tools: true
+---
+<section class="page-hero"><div class="wrap">
+  <nav class="crumbs"><a href="/">Home</a> / <a href="/tools/">Tools</a> / <span>Profit Margin Calculator</span></nav>
+  <span class="eyebrow">Free calculator</span>
+  <h1>Profit margin calculator for online stores</h1>
+  <p class="lead">Most new stores calculate margin on product cost alone, then wonder where the money went. This one includes every cost that hits a real order.</p>
+</div></section>
+<section><div class="wrap tool">
+  <form class="form-card" id="pm-form" onsubmit="return false">
+    <div class="row"><div class="field"><label for="pm-cost">Product cost (per unit, $)</label><input id="pm-cost" type="number" step="0.01" min="0" value="12"></div>
+    <div class="field"><label for="pm-price">Selling price ($)</label><input id="pm-price" type="number" step="0.01" min="0" value="39"></div></div>
+    <div class="row"><div class="field"><label for="pm-ship">Shipping + packaging you pay ($)</label><input id="pm-ship" type="number" step="0.01" min="0" value="6"></div>
+    <div class="field"><label for="pm-ad">Ad cost per order ($)</label><input id="pm-ad" type="number" step="0.01" min="0" value="8"></div></div>
+    <div class="row"><div class="field"><label for="pm-feep">Payment fee (%)</label><input id="pm-feep" type="number" step="0.01" min="0" value="2.9"></div>
+    <div class="field"><label for="pm-feef">Payment fee (fixed $)</label><input id="pm-feef" type="number" step="0.01" min="0" value="0.30"></div></div>
+    <div class="row"><div class="field"><label for="pm-plat">Platform / marketplace fee (%)</label><input id="pm-plat" type="number" step="0.01" min="0" value="0"></div>
+    <div class="field"><label for="pm-target">Target margin (%)</label><input id="pm-target" type="number" step="1" min="0" max="90" value="30"></div></div>
+    <p class="small muted">Defaults are examples only. Enter your own supplier, shipping and payment-processor rates.</p>
+  </form>
+  <div class="result-card" aria-live="polite">
+    <h3>Per-order results</h3>
+    <div class="kpis">
+      <div class="kpi"><small>Net profit</small><strong id="pm-profit">—</strong></div>
+      <div class="kpi"><small>Net margin</small><strong id="pm-margin">—</strong></div>
+      <div class="kpi"><small>Markup on cost</small><strong id="pm-markup">—</strong></div>
+      <div class="kpi"><small>Total fees</small><strong id="pm-fees">—</strong></div>
+      <div class="kpi"><small>All-in cost</small><strong id="pm-total">—</strong></div>
+      <div class="kpi"><small>Price for target</small><strong id="pm-need">—</strong></div>
+    </div>
+    <p>Profit per 100 orders: <strong id="pm-per100" style="color:#fff">—</strong></p>
+    <p id="pm-verdict"></p>
+    <a class="btn btn-accent btn-sm" href="/get-your-store-built.html">Get help building a profitable store</a>
+  </div>
+</div></section>
+<section class="alt"><div class="wrap narrow prose">
+  <h2>Margin vs. markup: the difference that trips people up</h2>
+  <p><strong>Markup</strong> is profit as a percentage of <em>cost</em>. <strong>Margin</strong> is profit as a percentage of <em>price</em>. A product that costs $10 and sells for $20 has a 100% markup but a 50% gross margin. Advertisers, investors and accountants talk in margin, so this calculator reports both.</p>
+  <h2>The formulas</h2>
+  <ul>
+    <li><strong>Fees</strong> = price × (payment % + platform %) + fixed payment fee</li>
+    <li><strong>Net profit</strong> = price − product cost − shipping − fees − ad cost</li>
+    <li><strong>Net margin</strong> = net profit ÷ price</li>
+    <li><strong>Price for target margin</strong> = (cost + shipping + fixed fee + ad cost) ÷ (1 − payment % − platform % − target margin)</li>
+  </ul>
+  <h2>What's a good margin?</h2>
+  <p>It varies by category, but after all costs including ads, many healthy small stores aim for 20–40% net margin per order. Below 15% leaves little room for returns, discounts or supplier price rises. If your numbers are thin, raise average order value with bundles, or cut acquisition costs with email and organic content. Our <a href="/guides/pricing-your-products.html">pricing guide</a> goes deeper.</p>
+</div></section>
